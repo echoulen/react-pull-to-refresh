@@ -2,6 +2,9 @@
 /node_modules
 /public
 /src
+/dist/dev.d.ts
+/dist/dev.js
+/dist/dev.js.map
 tsconfig.json
 tslint.json
 webpack.config.js
