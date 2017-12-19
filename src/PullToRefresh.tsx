@@ -16,17 +16,18 @@ export interface PullToRefreshState {
 }
 
 export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRefreshState> {
-    private container: HTMLElement;
+    private container: any;
     @autobind
-    private containerRef(container: HTMLElement) {
+    private containerRef(container) {
         this.container = container;
     }
 
-    private pullDown: HTMLElement;
+    private pullDown: any;
     @autobind
-    private pullDownRef(pullDown: HTMLElement) {
+    private pullDownRef(pullDown) {
         this.pullDown = pullDown;
-        const maxPullDownDistance = this.pullDown.firstChild["getBoundingClientRect"]().height;
+        const maxPullDownDistance = this.pullDown && this.pullDown.firstChild && this.pullDown.firstChild["getBoundingClientRect"]
+            ? this.pullDown.firstChild["getBoundingClientRect"]().height : 0;
         this.setState({maxPullDownDistance});
     }
 
