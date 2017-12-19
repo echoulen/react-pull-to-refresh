@@ -1,9 +1,9 @@
 {
   "name": "react-js-pull-to-refresh",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React pull to refresh",
   "main": "dist/index.js",
-  "typings": ".dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "dev": "webpack-dev-server",
     "lint": "tslint -c tslint.json src/*",
