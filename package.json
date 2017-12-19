@@ -1,5 +1,5 @@
 {
-  "name": "react-js-pull-to-refesh",
+  "name": "react-js-pull-to-refresh",
   "version": "0.1.0",
   "description": "React pull to refresh",
   "main": "dist/PullToRefresh.js",
