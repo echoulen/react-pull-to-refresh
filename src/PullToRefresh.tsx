@@ -63,7 +63,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     @autobind
-    private onTouchStart(e: TouchEvent) {
+    private onTouchStart(e) {
         this.dragging = true;
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
@@ -73,7 +73,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     @autobind
-    private onTouchMove(e: TouchEvent) {
+    private onTouchMove(e) {
         if (!this.dragging) {
             return;
         }
