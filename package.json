@@ -1,0 +1,46 @@
+{
+  "name": "react-js-pull-to-refesh",
+  "version": "0.1.0",
+  "description": "React pull to refresh",
+  "main": "dist/PullToRefresh.js",
+  "types": ".dist/PullToRefresh.d.ts",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "tsc": "tsc -p .",
+    "test": "npm run lint",
+    "prepublish": "npm run tsc && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/echoulen/react-js-pull-to-refesh.git"
+  },
+  "keywords": [
+    "react",
+    "pull-to-refesh"
+  ],
+  "author": "echoulen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/echoulen/react-js-pull-to-refesh/issues"
+  },
+  "homepage": "https://github.com/echoulen/react-js-pull-to-refesh#readme",
+  "dependencies": {
+    "@types/react": "^16.0.31",
+    "core-decorators": "^0.20.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/core-decorators": "^0.10.32",
+    "@types/react-dom": "^16.0.3",
+    "awesome-typescript-loader": "^3.4.1",
+    "path": "^0.12.7",
+    "react-hot-loader": "^3.1.3",
+    "source-map-loader": "^0.2.3",
+    "tslint": "^5.8.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
