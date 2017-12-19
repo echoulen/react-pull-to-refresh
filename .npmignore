@@ -1,0 +1,8 @@
+/node_modules
+/public
+/src
+dist/index.d.ts
+tsconfig.json
+tslint.json
+webpack.config.js
+yarn.lock
