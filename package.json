@@ -6,7 +6,9 @@
   "types": ".dist/PullToRefresh.d.ts",
   "scripts": {
     "dev": "webpack-dev-server",
-    "tsc": "tsc -p .",
+    "lint": "tslint -c tslint.json src/*",
+    "clean": "rimraf dist",
+    "tsc": "npm run clean && tsc -p .",
     "test": "npm run lint",
     "prepublish": "npm run tsc && npm test"
   },
@@ -25,17 +27,18 @@
   },
   "homepage": "https://github.com/echoulen/react-js-pull-to-refesh#readme",
   "dependencies": {
-    "@types/react": "^16.0.31",
     "core-decorators": "^0.20.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@types/react": "^16.0.31",
     "@types/core-decorators": "^0.10.32",
     "@types/react-dom": "^16.0.3",
     "awesome-typescript-loader": "^3.4.1",
     "path": "^0.12.7",
     "react-hot-loader": "^3.1.3",
+    "rimraf": "^2.6.2",
     "source-map-loader": "^0.2.3",
     "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",

@@ -1,7 +1,9 @@
 /node_modules
 /public
 /src
-dist/index.d.ts
+/dist/index.d.ts
+/dist/index.js
+/dist/index.js.map
 tsconfig.json
 tslint.json
 webpack.config.js
