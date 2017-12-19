@@ -89,7 +89,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             });
         }
 
-        if (this.currentY - this.startY > this.state.maxPullDownDistance * 1.5) {
+        if (this.currentY - this.startY > this.state.maxPullDownDistance) {
             return;
         }
 
@@ -99,6 +99,10 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
 
     @autobind
     private onEnd() {
+        this.dragging = false;
+        this.startY = 0;
+        this.currentY = 0;
+
         this.setState({
             pullToRefreshThresholdBreached: false,
             onRefreshing: true,
@@ -110,9 +114,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
                     this.container.style.transform = "none";
                     this.container.style["willChange"] = "none";
                 });
-                this.dragging = false;
-                this.startY = 0;
-                this.currentY = 0;
             });
         });
     }
