@@ -18,9 +18,9 @@ export class Basic extends React.Component<BasicProps, BasicState> {
         return (
             <div style={{overflow: "scroll"}}>
                 <PullToRefresh
-                    pullDownContent={<div style={{backgroundColor: "red"}}>pullDownContent</div>}
-                    releaseContent={<div style={{backgroundColor: "red"}}>releaseContent</div>}
-                    refreshContent={<div style={{backgroundColor: "red", height: "200px"}}>refreshContent</div>}
+                    pullDownContent={<div style={{backgroundColor: "grey", height: "200px", textAlign: "center"}}>Pull down to refresh</div>}
+                    releaseContent={<div style={{backgroundColor: "green", height: "200px", textAlign: "center"}}>Release to refresh</div>}
+                    refreshContent={<div style={{backgroundColor: "yellow", height: "200px", textAlign: "center"}}>Refreshing</div>}
                     pullDownThreshold={200}
                     onRefresh={this.onRefresh}
                 >

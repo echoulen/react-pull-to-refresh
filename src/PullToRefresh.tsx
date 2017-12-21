@@ -69,6 +69,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.currentY = this.startY;
 
         this.container.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
+        this.pullDown.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
     }
 
     @autobind
@@ -93,7 +94,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         }
 
         this.container.style.overflow = "visible";
-        this.container.style.transform = `translate3d(0px, ${this.currentY - this.startY}px, 0px)`;
+        this.container.style.transform = `translate(0px, ${this.currentY - this.startY}px)`;
     }
 
     @autobind
@@ -108,14 +109,18 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         }
 
         this.container.style.overflow = "visible";
-        this.container.style.transform = `translate3d(0px, ${this.props.pullDownThreshold}px, 0px)`;
+        this.container.style.transform = `translate(0px, ${this.props.pullDownThreshold}px)`;
         this.setState({
-            pullToRefreshThresholdBreached: false,
             onRefreshing: true,
         }, () => {
             this.props.onRefresh().then(() => {
-                this.setState({onRefreshing: false});
                 this.initContainer();
+                setTimeout(() => {
+                    this.setState({
+                        onRefreshing: false,
+                        pullToRefreshThresholdBreached: false,
+                    });
+                }, 200);
             });
         });
     }
@@ -128,43 +133,37 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     private renderPullDownContent() {
-        const {releaseContent, pullDownContent, refreshContent, pullDownThreshold} = this.props;
+        const {releaseContent, pullDownContent, refreshContent} = this.props;
         const {onRefreshing, pullToRefreshThresholdBreached} = this.state;
         const content = onRefreshing ? refreshContent : pullToRefreshThresholdBreached ? releaseContent : pullDownContent;
         const contentStyle: React.CSSProperties = {
-            height: `${pullDownThreshold}px`,
+            position: "absolute",
+            overflow: "hidden",
+            left: 0,
+            right: 0,
+            top: 0,
         };
         return (
-            <div style={contentStyle}>
+            <div style={contentStyle} ref={this.pullDownRef}>
                 {content}
             </div>
         );
     }
 
     public render() {
-        const {maxPullDownDistance} = this.state;
-
         const containerStyle: React.CSSProperties = {
             height: "auto",
             overflow: "hidden",
             WebkitOverflowScrolling: "touch",
-        };
-
-        const pullContentStyles: React.CSSProperties = {
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: (-maxPullDownDistance),
+            position: "relative",
+            zIndex: 1,
+            backgroundColor: "white",
         };
 
         return (
-            <div ref={this.containerRef} style={containerStyle}>
-                <div ref={this.pullDownRef} style={{position: "relative"}}>
-                    <div style={pullContentStyles}>
-                        {this.renderPullDownContent()}
-                    </div>
-                </div>
-                <div style={{position: "relative", zIndex: 1}}>
+            <div style={containerStyle}>
+                {this.renderPullDownContent()}
+                <div ref={this.containerRef} style={containerStyle}>
                     {this.props.children}
                 </div>
             </div>
