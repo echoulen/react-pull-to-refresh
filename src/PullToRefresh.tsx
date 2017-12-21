@@ -72,7 +72,8 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     private onTouchStart(e) {
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
-        if (this.startY > 40) {
+        const top = this.container.getBoundingClientRect().y;
+        if (this.startY - top > 40) {
             return;
         }
 
