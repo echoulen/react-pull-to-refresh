@@ -51,29 +51,32 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     public componentDidMount(): void {
-        this.pullTag.addEventListener("touchstart", this.onTouchStart);
+        this.container.addEventListener("touchstart", this.onTouchStart);
         this.container.addEventListener("touchmove", this.onTouchMove);
         this.container.addEventListener("touchend", this.onEnd);
-        this.pullTag.addEventListener("mousedown", this.onTouchStart);
+        this.container.addEventListener("mousedown", this.onTouchStart);
         this.container.addEventListener("mousemove", this.onTouchMove);
         this.container.addEventListener("mouseup", this.onEnd);
     }
 
     public componentWillUnmount(): void {
-        this.pullTag.removeEventListener("touchstart", this.onTouchStart);
+        this.container.removeEventListener("touchstart", this.onTouchStart);
         this.container.removeEventListener("touchmove", this.onTouchMove);
         this.container.removeEventListener("touchend", this.onEnd);
-        this.pullTag.removeEventListener("mousedown", this.onTouchStart);
+        this.container.removeEventListener("mousedown", this.onTouchStart);
         this.container.removeEventListener("mousemove", this.onTouchMove);
         this.container.removeEventListener("mouseup", this.onEnd);
     }
 
     @autobind
     private onTouchStart(e) {
-        this.dragging = true;
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
+        if (this.startY > 40) {
+            return;
+        }
 
+        this.dragging = true;
         this.container.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
         this.pullDown.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
     }
@@ -166,19 +169,10 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             backgroundColor: "white",
         };
 
-        const pullHiddenTagStyle: React.CSSProperties = {
-            height: "50px",
-            width: "100%",
-            position: "absolute",
-            top: 0,
-            zIndex: 100,
-        };
-
         return (
             <div style={containerStyle}>
                 {this.renderPullDownContent()}
                 <div ref={this.containerRef} style={containerStyle}>
-                    <div ref={this.pullTagRef} style={pullHiddenTagStyle} />
                     {this.props.children}
                 </div>
             </div>

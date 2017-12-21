@@ -25,7 +25,7 @@ export class Basic extends React.Component<BasicProps, BasicState> {
                     onRefresh={this.onRefresh}
                 >
                     <div style={{height: "95vh", textAlign: "center"}}>
-                        PullToRefresh
+                        <div onClick={console.log}>PullToRefresh</div>
                     </div>
                 </PullToRefresh>
             </div>
