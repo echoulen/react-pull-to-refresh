@@ -89,7 +89,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             });
         }
 
-        if (this.currentY - this.startY > this.state.maxPullDownDistance * 1.2) {
+        if (this.currentY - this.startY > this.state.maxPullDownDistance) {
             return;
         }
 
