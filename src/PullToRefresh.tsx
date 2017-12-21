@@ -171,6 +171,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             width: "100%",
             position: "absolute",
             top: 0,
+            zIndex: 100,
         };
 
         return (
