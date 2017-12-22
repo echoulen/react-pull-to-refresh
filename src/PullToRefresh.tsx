@@ -80,7 +80,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.dragging = true;
         this.container.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
         this.pullDown.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
-        e.preventDefault();
     }
 
     @autobind
