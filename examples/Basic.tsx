@@ -24,8 +24,8 @@ export class Basic extends React.Component<BasicProps, BasicState> {
                     pullDownThreshold={200}
                     onRefresh={this.onRefresh}
                 >
-                    <div style={{height: "95vh", textAlign: "center"}}>
-                        <div onClick={console.log}>PullToRefresh</div>
+                    <div style={{height: "150vh", textAlign: "center"}}>
+                        <div>PullToRefresh</div>
                     </div>
                 </PullToRefresh>
             </div>

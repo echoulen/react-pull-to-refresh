@@ -80,6 +80,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.dragging = true;
         this.container.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
         this.pullDown.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
+        e.preventDefault();
     }
 
     @autobind
@@ -92,6 +93,8 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         if (this.currentY < this.startY) {
             return;
         }
+
+        e.preventDefault();
 
         if ((this.currentY - this.startY) >= this.props.pullDownThreshold) {
             this.setState({
@@ -133,6 +136,11 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
                 }, 200);
             });
         });
+    }
+
+    @autobind
+    private stopScroll(e) {
+        e.preventDefault();
     }
 
     private initContainer() {
