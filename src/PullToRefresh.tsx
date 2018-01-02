@@ -144,8 +144,10 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
 
     private initContainer() {
         requestAnimationFrame(() => {
-            this.container.style.overflow = "auto";
-            this.container.style.transform = "none";
+            if (this.container) {
+                this.container.style.overflow = "auto";
+                this.container.style.transform = "none";
+            }
         });
     }
 
