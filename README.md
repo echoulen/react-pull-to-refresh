@@ -7,7 +7,7 @@ Pull to refresh with react
 [![npm version](https://badge.fury.io/js/react-js-pull-to-refresh.svg)](https://badge.fury.io/js/react-js-pull-to-refresh)
 [![license](https://img.shields.io/github/license/echoulen/react-js-pull-to-refresh.svg)](https://opensource.org/licenses/MIT)
 
-![](https://media.giphy.com/media/xT1R9QXh120aPohDGw/giphy.gif)
+![](https://media.giphy.com/media/xT1R9LCrbpOJ4J7HoI/giphy.gif)
 
 ## installation
 `npm install react-js-pull-to-refresh --save`
