@@ -20,7 +20,7 @@ renderExample();
 declare const module: { hot: any };
 
 if (module.hot) {
-    module.hot.accept("./PullToRefresh", () => {
+    module.hot.accept("./components/PullToRefresh", () => {
         renderExample();
     });
 }
