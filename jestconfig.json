@@ -1,0 +1,20 @@
+{
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+  "coverageReporters": [
+    "html",
+    "json",
+    "text"
+  ],
+  "collectCoverageFrom": [
+    "src/**/*.tsx",
+    "src/**/*.ts"
+  ],
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ]
+}
