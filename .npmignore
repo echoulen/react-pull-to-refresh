@@ -2,6 +2,7 @@
 /node_modules
 /public
 /src
+/__tests__
 /examples
 /dist/src/dev.d.ts
 /dist/src/dev.js
