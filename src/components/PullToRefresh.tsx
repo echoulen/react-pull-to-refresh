@@ -51,6 +51,10 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     public componentDidMount(): void {
+        if (!this.container) {
+            return;
+        }
+
         this.container.addEventListener("touchstart", this.onTouchStart);
         this.container.addEventListener("touchmove", this.onTouchMove);
         this.container.addEventListener("touchend", this.onEnd);
@@ -60,6 +64,10 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     public componentWillUnmount(): void {
+        if (!this.container) {
+            return;
+        }
+
         this.container.removeEventListener("touchstart", this.onTouchStart);
         this.container.removeEventListener("touchmove", this.onTouchMove);
         this.container.removeEventListener("touchend", this.onEnd);

@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 export interface RefreshContentProps {
-    height?: number;
+    height?: string;
     background?: any;
 }
 

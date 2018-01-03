@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 export interface PullDownContentProps {
-    height?: number;
+    height?: string;
     background?: any;
     label?: string;
 }
