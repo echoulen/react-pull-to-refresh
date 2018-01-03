@@ -10,7 +10,7 @@
     "clean": "rimraf dist",
     "tsc": "npm run clean && tsc -p .",
     "test": "rimraf dist && npm run lint && jest --config=jestconfig.json",
-    "prepublish": "npm run tsc && npm test"
+    "prepublish": "npm test && npm run tsc"
   },
   "repository": {
     "type": "git",
