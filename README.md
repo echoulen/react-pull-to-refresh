@@ -32,12 +32,18 @@ or
 import {PullToRefresh} from "react-js-pull-to-refresh";
 ```
 
+#### import default content (optional)
+```js
+import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
+```
+
+
 #### Sample
 ```js
 <PullToRefresh
-  pullDownContent={<div style={{backgroundColor: "grey", height: "200px", textAlign: "center"}}>Pull down to refresh</div>}
-  releaseContent={<div style={{backgroundColor: "green", height: "200px", textAlign: "center"}}>Release to refresh</div>}
-  refreshContent={<div style={{backgroundColor: "yellow", height: "200px", textAlign: "center"}}>Refreshing</div>}
+  pullDownContent={<PullDownContent />}
+  releaseContent={<ReleaseContent />}
+  refreshContent={<RefreshContent />}
   pullDownThreshold={200}
   onRefresh={this.onRefresh}
 >
