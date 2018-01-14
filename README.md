@@ -10,7 +10,7 @@ Pull to refresh with react
 ![](https://media.giphy.com/media/xT1R9LCrbpOJ4J7HoI/giphy.gif)
 
 ## Demo
-[See the demo in action at https://echoulen.github.io/react-js-pull-to-refresh/](https://echoulen.github.io/react-js-pull-to-refresh/)
+[See the demo in action at https://echoulen.github.io/react-pull-to-refresh/](https://echoulen.github.io/react-pull-to-refresh/)
 
 ## installation
 `npm install react-js-pull-to-refresh --save`
