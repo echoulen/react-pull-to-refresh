@@ -37,13 +37,13 @@ import {PullToRefresh} from "react-js-pull-to-refresh";
 ```
 
 #### import default content (optional)
-```js
+```typescript
 import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
 ```
 
 
 #### Sample
-```js
+```jsx
 <PullToRefresh
   pullDownContent={<PullDownContent />}
   releaseContent={<ReleaseContent />}
