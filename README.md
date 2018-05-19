@@ -57,5 +57,8 @@ import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-
 </PullToRefresh>
 ```
 
+### Sample code in typescript
+[Link](https://github.com/echoulen/react-pull-to-refresh/blob/master/examples/Basic.tsx)
+
 ## Contributing
 `npm run dev`
