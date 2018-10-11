@@ -5,7 +5,6 @@ exports[`PullToRefresh spec App shows PullToRefresh 1`] = `
   style={
     Object {
       "WebkitOverflowScrolling": "touch",
-      "backgroundColor": "white",
       "height": "auto",
       "overflow": "hidden",
       "position": "relative",
@@ -32,7 +31,6 @@ exports[`PullToRefresh spec App shows PullToRefresh 1`] = `
     style={
       Object {
         "WebkitOverflowScrolling": "touch",
-        "backgroundColor": "white",
         "height": "auto",
         "overflow": "hidden",
         "position": "relative",
