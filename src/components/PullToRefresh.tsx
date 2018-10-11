@@ -184,7 +184,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             WebkitOverflowScrolling: "touch",
             position: "relative",
             zIndex: 1,
-            backgroundColor: "white",
         };
 
         return (
