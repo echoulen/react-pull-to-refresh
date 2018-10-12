@@ -7,6 +7,7 @@ export interface PullToRefreshProps {
     refreshContent: JSX.Element;
     pullDownThreshold: number;
     onRefresh: () => Promise<any>;
+    backgroundColor?: string;
 }
 
 export interface PullToRefreshState {
@@ -178,6 +179,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     public render() {
+        const {backgroundColor} = this.props;
         const containerStyle: React.CSSProperties = {
             height: "auto",
             overflow: "hidden",
@@ -185,6 +187,10 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             position: "relative",
             zIndex: 1,
         };
+
+        if (backgroundColor) {
+            containerStyle.backgroundColor = backgroundColor;
+        }
 
         return (
             <div style={containerStyle}>

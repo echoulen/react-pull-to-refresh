@@ -24,6 +24,7 @@ export class Basic extends React.Component<BasicProps, BasicState> {
                     refreshContent={<RefreshContent />}
                     pullDownThreshold={200}
                     onRefresh={this.onRefresh}
+                    backgroundColor="white"
                 >
                     <Container>
                         <Label>PullToRefresh</Label>

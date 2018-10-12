@@ -3,6 +3,9 @@
     "^.+\\.tsx?$": "ts-jest"
   },
   "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+  "testPathIgnorePatterns": [
+    "dist"
+  ],
   "coverageReporters": [
     "html",
     "json",

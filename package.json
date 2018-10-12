@@ -6,11 +6,9 @@
   "typings": "./dist/src/index.d.ts",
   "scripts": {
     "dev": "webpack-dev-server",
-    "lint": "tslint --project .",
-    "clean": "rimraf dist",
-    "tsc": "npm run clean && tsc -p .",
-    "test": "rimraf dist && npm run lint && jest --config=jestconfig.json",
-    "prepublish": "npm test && npm run tsc"
+    "pretest": "rimraf dist && tslint --project . && tsc -p .",
+    "test": "jest --config=jestconfig.json",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",

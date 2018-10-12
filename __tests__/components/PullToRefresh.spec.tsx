@@ -14,6 +14,7 @@ describe("PullToRefresh spec", () => {
                     releaseContent={<div>Release to refresh</div>}
                     refreshContent={<div>Refreshing</div>}
                     pullDownThreshold={200}
+                    backgroundColor="white"
                 >
                     <div>Test</div>
                 </PullToRefresh>
