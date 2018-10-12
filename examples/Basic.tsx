@@ -43,6 +43,7 @@ const Container = styled.div`
 `;
 
 const Label = styled.div`
+    user-select: none;
     margin-top: 20px;
     color: aliceblue;
     border: 1px solid aliceblue;
