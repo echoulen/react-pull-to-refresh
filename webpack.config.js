@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const resolve = require('path').resolve;
 
 module.exports = {
+  mode: "development",
   resolve: {
     extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"],
     alias: {
