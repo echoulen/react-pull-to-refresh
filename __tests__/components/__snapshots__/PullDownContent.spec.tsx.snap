@@ -2,14 +2,40 @@
 
 exports[`PullDownContent spec App shows PullDownContent 1`] = `
 <div
-  className="sc-bwzfXH kHYjaZ"
-  height="200px"
+  id="container2"
 >
   <div
-    className="sc-htpNat GucRt"
+    id="arrow"
   />
   <span>
     Pull down to refresh
   </span>
+  <style>
+    
+                #container2 {
+                    background: #CCC;
+                    height: 200px;
+                    text-align: center;
+                }
+                #arrow {
+                    margin: 10px auto;
+                    border-left: 15px solid transparent;
+                    border-right: 15px solid transparent;
+                    border-top: 15px solid #666666;
+                    height: 0;
+                    width: 0;
+                    -webkit-animation: fadein 1.5s infinite;
+                    animation: fadein 1.5s infinite;
+                }
+                @keyframes fadein {
+                    0%, 100% {
+                        opacity: 0;
+                    }
+                    45%, 55% {
+                        opacity: 1;
+                    }
+                }
+            
+  </style>
 </div>
 `;
