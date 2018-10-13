@@ -1,5 +1,4 @@
 import * as React from "react";
-import {autobind} from "core-decorators";
 
 export interface PullToRefreshProps {
     pullDownContent: JSX.Element;
@@ -18,19 +17,13 @@ export interface PullToRefreshState {
 
 export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRefreshState> {
     private container: any;
-    @autobind
+
     private containerRef(container) {
         this.container = container;
     }
 
-    private pullTag: any;
-    @autobind
-    private pullTagRef(pullTag) {
-        this.pullTag = pullTag;
-    }
-
     private pullDown: any;
-    @autobind
+
     private pullDownRef(pullDown) {
         this.pullDown = pullDown;
         const maxPullDownDistance = this.pullDown && this.pullDown.firstChild && this.pullDown.firstChild["getBoundingClientRect"]
@@ -49,6 +42,12 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             maxPullDownDistance: 0,
             onRefreshing: false,
         };
+
+        this.containerRef = this.containerRef.bind(this);
+        this.pullDownRef = this.pullDownRef.bind(this);
+        this.onTouchStart = this.onTouchStart.bind(this);
+        this.onTouchMove = this.onTouchMove.bind(this);
+        this.onEnd = this.onEnd.bind(this);
     }
 
     public componentDidMount(): void {
@@ -77,7 +76,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.container.removeEventListener("mouseup", this.onEnd);
     }
 
-    @autobind
     private onTouchStart(e) {
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
@@ -91,7 +89,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.pullDown.style.transition = "transform 0.2s cubic-bezier(0,0,0.31,1)";
     }
 
-    @autobind
     private onTouchMove(e) {
         if (!this.dragging) {
             return;
@@ -118,7 +115,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.container.style.transform = `translate(0px, ${this.currentY - this.startY}px)`;
     }
 
-    @autobind
     private onEnd() {
         this.dragging = false;
         this.startY = 0;
@@ -144,11 +140,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
                 }, 200);
             });
         });
-    }
-
-    @autobind
-    private stopScroll(e) {
-        e.preventDefault();
     }
 
     private initContainer() {
