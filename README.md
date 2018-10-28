@@ -28,6 +28,7 @@ or
 |refreshContent|JSX.Element|true|
 |pullDownThreshold|number|true|
 |onRefresh|Promise|true|
+|triggerHeight|number|false|
 |backgroundColor|string|false|
 
 ## Usage
@@ -51,6 +52,7 @@ import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-
   refreshContent={<RefreshContent />}
   pullDownThreshold={200}
   onRefresh={this.onRefresh}
+  triggerHeight={50}
   backgroundColor='white'
 >
   <div style={{height: '150vh', textAlign: 'center'}}>
