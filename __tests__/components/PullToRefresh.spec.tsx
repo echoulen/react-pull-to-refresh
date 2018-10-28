@@ -1,5 +1,3 @@
-/*tslint:disable no-implicit-dependencies*/
-
 import * as React from "react";
 import * as renderer from "react-test-renderer";
 import {PullToRefresh} from "../../src/";
@@ -14,6 +12,7 @@ describe("PullToRefresh spec", () => {
                     releaseContent={<div>Release to refresh</div>}
                     refreshContent={<div>Refreshing</div>}
                     pullDownThreshold={200}
+                    triggerHeight={100}
                     backgroundColor="white"
                 >
                     <div>Test</div>

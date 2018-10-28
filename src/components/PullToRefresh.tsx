@@ -6,6 +6,7 @@ export interface PullToRefreshProps {
     refreshContent: JSX.Element;
     pullDownThreshold: number;
     onRefresh: () => Promise<any>;
+    triggerHeight?: number;
     backgroundColor?: string;
 }
 
@@ -77,10 +78,12 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     private onTouchStart(e) {
+        const {triggerHeight = 40} = this.props;
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
         const top = this.container.getBoundingClientRect().top || this.container.getBoundingClientRect().y || 0;
-        if (this.startY - top > 40) {
+        console.log("this.startY - top", this.startY - top, triggerHeight);
+        if (this.startY - top > triggerHeight) {
             return;
         }
 

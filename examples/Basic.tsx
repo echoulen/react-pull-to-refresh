@@ -23,6 +23,7 @@ export class Basic extends React.Component<BasicProps, BasicState> {
                     refreshContent={<RefreshContent />}
                     pullDownThreshold={200}
                     onRefresh={this.onRefresh}
+                    triggerHeight={100}
                     backgroundColor="white"
                 >
                     <div id="basic-container">

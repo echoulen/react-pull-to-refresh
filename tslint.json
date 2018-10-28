@@ -11,6 +11,7 @@
     "no-unused-expression": false,
     "no-duplicate-imports": false,
     "no-trailing-whitespace": false,
+    "no-implicit-dependencies": false,
     "jsx-no-multiline-js": false,
     "jsx-boolean-value": false,
     "no-object-literal-type-assertion": false,
