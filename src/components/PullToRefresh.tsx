@@ -82,7 +82,6 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
         const top = this.container.getBoundingClientRect().top || this.container.getBoundingClientRect().y || 0;
-        console.log("this.startY - top", this.startY - top, triggerHeight);
         if (this.startY - top > triggerHeight) {
             return;
         }
