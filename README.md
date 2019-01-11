@@ -7,6 +7,7 @@ Pull to refresh with react
 [![npm version](https://badge.fury.io/js/react-js-pull-to-refresh.svg)](https://badge.fury.io/js/react-js-pull-to-refresh)
 [![license](https://img.shields.io/github/license/echoulen/react-js-pull-to-refresh.svg)](https://opensource.org/licenses/MIT)
 [![codebeat badge](https://codebeat.co/badges/3be54568-d7c5-4cc2-b5a4-8eae143b4dbf)](https://codebeat.co/projects/github-com-echoulen-react-pull-to-refresh-master)
+[![size](https://badgen.net/bundlephobia/minzip/react-js-pull-to-refresh)](https://bundlephobia.com/result?p=react-js-pull-to-refresh@1.2.1)
 
 ![](https://media.giphy.com/media/xT1R9LCrbpOJ4J7HoI/giphy.gif)
 
