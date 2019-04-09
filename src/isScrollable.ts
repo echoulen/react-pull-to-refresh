@@ -52,7 +52,6 @@ function isScrollable(element: Element, direction: number) {
  * @returns {!boolean} Whether the element or one of its ancestors is scrollable.
  */
 export function isTreeScrollable(element: Element, dir: number): boolean {
-    console.log(isScrollable(element, dir), element);
     if (isScrollable(element, dir)) {
         return true;
     }
