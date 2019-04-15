@@ -31,6 +31,7 @@ or
 |onRefresh|Promise|true|
 |triggerHeight|number|false|
 |backgroundColor|string|false|
+|startInvisible|boolean|false|
 
 ## Usage
 
@@ -55,6 +56,7 @@ import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-
   onRefresh={this.onRefresh}
   triggerHeight={50}
   backgroundColor='white'
+  startInvisible={true}
 >
   <div style={{height: '150vh', textAlign: 'center'}}>
     <div>PullToRefresh</div>
