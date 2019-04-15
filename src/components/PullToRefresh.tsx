@@ -8,6 +8,7 @@ export interface PullToRefreshProps {
     onRefresh: () => Promise<any>;
     triggerHeight?: number;
     backgroundColor?: string;
+    onlyRefreshAtTop?: boolean;
 }
 
 export interface PullToRefreshState {
@@ -78,7 +79,11 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     private onTouchStart(e) {
-        const {triggerHeight = 40} = this.props;
+        const {triggerHeight = 40, onlyRefreshAtTop} = this.props;
+        if (onlyRefreshAtTop && this.container.getBoundingClientRect().top < 0) {
+          return;
+        }
+
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
         const top = this.container.getBoundingClientRect().top || this.container.getBoundingClientRect().y || 0;
