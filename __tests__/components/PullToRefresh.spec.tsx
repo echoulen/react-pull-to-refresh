@@ -14,6 +14,7 @@ describe("PullToRefresh spec", () => {
                     pullDownThreshold={200}
                     triggerHeight={100}
                     backgroundColor="white"
+                    startInvisible={false}
                 >
                     <div>Test</div>
                 </PullToRefresh>

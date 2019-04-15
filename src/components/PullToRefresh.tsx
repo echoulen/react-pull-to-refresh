@@ -9,6 +9,7 @@ export interface PullToRefreshProps {
     triggerHeight?: number;
     backgroundColor?: string;
     onlyRefreshAtTop?: boolean;
+    startInvisible?: boolean;
 }
 
 export interface PullToRefreshState {
@@ -120,6 +121,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
 
         this.container.style.overflow = "visible";
         this.container.style.transform = `translate(0px, ${this.currentY - this.startY}px)`;
+        this.pullDown.style.visibility = "visible";
     }
 
     private onEnd() {
@@ -128,6 +130,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         this.currentY = 0;
 
         if (!this.state.pullToRefreshThresholdBreached) {
+            this.pullDown.style.visibility = this.props.startInvisible ? "hidden" : "visible";
             this.initContainer();
             return;
         }
@@ -159,7 +162,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
     }
 
     private renderPullDownContent() {
-        const {releaseContent, pullDownContent, refreshContent} = this.props;
+        const {releaseContent, pullDownContent, refreshContent, startInvisible} = this.props;
         const {onRefreshing, pullToRefreshThresholdBreached} = this.state;
         const content = onRefreshing ? refreshContent : pullToRefreshThresholdBreached ? releaseContent : pullDownContent;
         const contentStyle: React.CSSProperties = {
@@ -168,6 +171,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             left: 0,
             right: 0,
             top: 0,
+            visibility: startInvisible ? "hidden" : "visible",
         };
         return (
             <div style={contentStyle} ref={this.pullDownRef}>

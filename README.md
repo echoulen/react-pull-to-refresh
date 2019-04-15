@@ -32,6 +32,7 @@ or
 |triggerHeight|number|false|
 |backgroundColor|string|false|
 |onlyRefreshAtTop|boolean|false|
+|startInvisible|boolean|false|
 
 ## Usage
 
@@ -57,6 +58,7 @@ import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-
   triggerHeight={50}
   backgroundColor='white'
   onlyRefreshAtTop={true}
+  startInvisible={true}
 >
   <div style={{height: '150vh', textAlign: 'center'}}>
     <div>PullToRefresh</div>
