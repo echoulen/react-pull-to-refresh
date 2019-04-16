@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DIRECTION, isTreeScrollable } from "../isScrollable";
 
 export interface PullToRefreshProps {
     pullDownContent: JSX.Element;
@@ -6,7 +7,7 @@ export interface PullToRefreshProps {
     refreshContent: JSX.Element;
     pullDownThreshold: number;
     onRefresh: () => Promise<any>;
-    triggerHeight?: number;
+    triggerHeight?: number | "auto";
     backgroundColor?: string;
     startInvisible?: boolean;
 }
@@ -82,9 +83,29 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         const {triggerHeight = 40} = this.props;
         this.startY = e["pageY"] || e.touches[0].pageY;
         this.currentY = this.startY;
-        const top = this.container.getBoundingClientRect().top || this.container.getBoundingClientRect().y || 0;
-        if (this.startY - top > triggerHeight) {
-            return;
+
+        if (triggerHeight === "auto") {
+            const target = e.target;
+
+            const container = this.container;
+            if (!container) {
+                return;
+            }
+
+            // an element we're touching can be scrolled up, so gesture is going to be a scroll gesture
+            if (e.type === "touchstart" && isTreeScrollable(target, DIRECTION.up)) {
+                return;
+            }
+
+            // even though we're not scrolling, the pull-to-refresh isn't visible to the user so cancel
+            if (container.getBoundingClientRect().top < 0) {
+                return;
+            }
+        } else {
+            const top = this.container.getBoundingClientRect().top || this.container.getBoundingClientRect().y || 0;
+            if (this.startY - top > triggerHeight) {
+                return;
+            }
         }
 
         this.dragging = true;
