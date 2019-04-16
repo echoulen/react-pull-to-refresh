@@ -29,7 +29,7 @@ or
 |refreshContent|JSX.Element|true|
 |pullDownThreshold|number|true|
 |onRefresh|Promise|true|
-|triggerHeight|number|false|
+|triggerHeight|number or 'auto'|false|
 |backgroundColor|string|false|
 |startInvisible|boolean|false|
 
