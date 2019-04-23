@@ -190,7 +190,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             visibility: startInvisible ? "hidden" : "visible",
         };
         return (
-            <div style={contentStyle} ref={this.pullDownRef}>
+            <div id="ptr-pull-down" style={contentStyle} ref={this.pullDownRef}>
                 {content}
             </div>
         );
@@ -211,9 +211,9 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         }
 
         return (
-            <div style={containerStyle}>
+            <div id="ptr-parent" style={containerStyle}>
                 {this.renderPullDownContent()}
-                <div ref={this.containerRef} style={containerStyle}>
+                <div id="ptr-container" ref={this.containerRef} style={containerStyle}>
                     {this.props.children}
                 </div>
             </div>
