@@ -2,6 +2,7 @@
 
 exports[`PullToRefresh spec App shows PullToRefresh 1`] = `
 <div
+  id="ptr-parent"
   style={
     Object {
       "WebkitOverflowScrolling": "touch",
@@ -14,6 +15,7 @@ exports[`PullToRefresh spec App shows PullToRefresh 1`] = `
   }
 >
   <div
+    id="ptr-pull-down"
     style={
       Object {
         "left": 0,
@@ -30,6 +32,7 @@ exports[`PullToRefresh spec App shows PullToRefresh 1`] = `
     </div>
   </div>
   <div
+    id="ptr-container"
     style={
       Object {
         "WebkitOverflowScrolling": "touch",
