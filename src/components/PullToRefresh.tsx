@@ -208,7 +208,7 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
         };
 
         if (this.props.containerStyle) {
-          Object.keys(this.props.containerStyle).forEach(key => {
+          Object.keys(this.props.containerStyle).forEach((key: string) => {
             containerStyle[key] = this.props.containerStyle[key];
           });
         }

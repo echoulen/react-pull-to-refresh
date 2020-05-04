@@ -9,7 +9,7 @@
     "pretest": "rimraf dist && tslint --project . && tsc -p .",
     "test": "jest --config=jestconfig.json",
     "prepublish": "npm test",
-    "prepare": "tsc -p ."
+    "prepare": "rimraf dist && tsc -p ."
   },
   "repository": {
     "type": "git",
