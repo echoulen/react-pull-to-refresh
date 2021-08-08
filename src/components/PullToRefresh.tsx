@@ -9,6 +9,7 @@ export interface PullToRefreshProps {
     onRefresh: () => Promise<any>;
     triggerHeight?: number | "auto";
     backgroundColor?: string;
+    containerStyle?: React.CSSProperties;
     startInvisible?: boolean;
 }
 
@@ -205,6 +206,12 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             position: "relative",
             zIndex: 1,
         };
+
+        if (this.props.containerStyle) {
+          Object.keys(this.props.containerStyle).forEach((key: string) => {
+            containerStyle[key] = this.props.containerStyle[key];
+          });
+        }
 
         if (backgroundColor) {
             containerStyle.backgroundColor = backgroundColor;
