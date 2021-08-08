@@ -124,7 +124,9 @@ export class PullToRefresh extends React.Component<PullToRefreshProps, PullToRef
             return;
         }
 
-        e.preventDefault();
+        if (e.cancelable) {
+            e.preventDefault();
+        }
 
         if ((this.currentY - this.startY) >= this.props.pullDownThreshold) {
             this.setState({
