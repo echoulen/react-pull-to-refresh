@@ -14,12 +14,16 @@ Pull to refresh with react
 ## Demo
 [See the demo in action at https://echoulen.github.io/react-pull-to-refresh/](https://echoulen.github.io/react-pull-to-refresh/)
 
-## installation
-`npm install react-js-pull-to-refresh --save`
+## Installation
+```bash
+npm install react-js-pull-to-refresh --save
+```
 
 or
 
-`yarn add react-js-pull-to-refresh`
+```bash
+yarn add react-js-pull-to-refresh
+```
 
 ## Props
 |Name|Type|Required
@@ -35,18 +39,18 @@ or
 
 ## Usage
 
-#### import PullToRefresh
+### Import PullToRefresh
 ```js
 import {PullToRefresh} from "react-js-pull-to-refresh";
 ```
 
-#### import default content (optional)
+### Import default content (optional)
 ```typescript
 import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
 ```
 
 
-#### Sample
+### Sample
 ```jsx
 <PullToRefresh
   pullDownContent={<PullDownContent />}
@@ -68,4 +72,6 @@ import {PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-
 [Link](https://github.com/echoulen/react-pull-to-refresh/blob/master/examples/Basic.tsx)
 
 ## Contributing
-`npm run dev`
+```bash
+npm run dev
+```
