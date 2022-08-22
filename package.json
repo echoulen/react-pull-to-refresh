@@ -32,8 +32,8 @@
     "awesome-typescript-loader": "^5.2.1",
     "jest": "^23.6.0",
     "path": "^0.12.7",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-hot-loader": "^4.3.11",
     "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.2",
@@ -47,7 +47,7 @@
     "webpack-dev-server": "^3.1.9"
   },
   "peerDependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
